@@ -5,9 +5,10 @@ const { Client } = require('@elastic/elasticsearch')
 const client = new Client({ node: 'http://localhost:9200' })
 
 async function run (text, search_for) {
-    lineReader.eachLine('../../python_script/Logfile',function(line) {
+    lineReader.eachLine('/home/hussain/node-projects/node-boilerplate/python_script/Logfile',function(line) {
       //The below process will read each line from the log file
       //It will extract the required substring and store it in a particular variable
+        console.log(line)
         var start = 0;
         var end = 0;
         while(line[end] != ' ') {
